@@ -1,3 +1,5 @@
+// Package scheduler provides Scheduler implementation in Go. It consists of the
+// Scheduler itself and Task that represents one scheduled item.
 package scheduler
 
 import (

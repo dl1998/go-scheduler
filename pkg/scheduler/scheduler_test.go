@@ -1,3 +1,4 @@
+// Package scheduler_test has tests for the scheduler package.
 package scheduler
 
 import (
