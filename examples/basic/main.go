@@ -1,8 +1,8 @@
 package main
 
 import (
-	"SimpleScheduler/pkg/scheduler"
 	"fmt"
+	"github.com/dl1998/go-scheduler/pkg/scheduler"
 	"time"
 )
 
