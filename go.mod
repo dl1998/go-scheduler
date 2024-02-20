@@ -1,4 +1,4 @@
-module SimpleScheduler
+module github.com/dl1998/go-scheduler
 
 go 1.21
 
