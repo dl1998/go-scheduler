@@ -177,7 +177,7 @@ func (scheduler *Scheduler) ScheduleTask(name string, startTime *time.Time, dura
 
 		ticker := time.NewTicker(interval)
 		defer ticker.Stop()
-		defer scheduler.removeTask(scheduledTask)
+		defer scheduler.StopTask(scheduledTask)
 
 		for {
 			select {
@@ -200,7 +200,10 @@ func (scheduler *Scheduler) ScheduleTask(name string, startTime *time.Time, dura
 
 // StopTask encapsulates task stopping sequence.
 func (scheduler *Scheduler) StopTask(task *Task) {
-	close(task.stopSignal)
+	if task.stopSignal != nil {
+		close(task.stopSignal)
+		task.stopSignal = nil
+	}
 	scheduler.removeTask(task)
 }
 
@@ -245,4 +248,10 @@ func (task *Task) SetToContext(name string, value interface{}) {
 // RemoveFromContext deletes value by key from the task context.
 func (task *Task) RemoveFromContext(name string) {
 	delete(task.context, name)
+}
+
+func (task *Task) Wait() {
+	if task.stopSignal != nil {
+		<-task.stopSignal
+	}
 }
