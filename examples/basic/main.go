@@ -29,7 +29,7 @@ func main() {
 
 	task := ScheduleDemoTask(*newScheduler)
 
-	time.Sleep(10 * time.Second)
+	task.Wait()
 
 	fmt.Println()
 	fmt.Println(task)
