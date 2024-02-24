@@ -250,6 +250,7 @@ func (task *Task) RemoveFromContext(name string) {
 	delete(task.context, name)
 }
 
+// Wait waits until task will be completed, either by timer or stop signal, whichever happens first.
 func (task *Task) Wait() {
 	if task.stopSignal != nil {
 		<-task.stopSignal
