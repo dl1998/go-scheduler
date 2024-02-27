@@ -297,7 +297,7 @@ func TestScheduler_StopTask(t *testing.T) {
 
 	time.Sleep(duration)
 
-	newScheduler.StopTask(newTask)
+	err := newScheduler.StopTask(newTask)
 
 	foundTask := false
 
@@ -307,8 +307,26 @@ func TestScheduler_StopTask(t *testing.T) {
 		}
 	}
 
-	if foundTask {
+	if foundTask && err != nil {
 		t.Fatalf("Task \"%s\" with id \"%s\" has not been stopped.", newTask.Name, newTask.ID)
+	}
+}
+
+// TestScheduler_StopTask_NotExist tests that Scheduler.StopTask method correctly
+// handles situation where provided task doesn't exist.
+func TestScheduler_StopTask_NotExist(t *testing.T) {
+	taskName := "Test Task"
+	intervalSeconds := 5
+	interval := time.Duration(intervalSeconds) * time.Second
+
+	newScheduler := CreateEmptyScheduler()
+	newTask := NewSimpleTask(taskName, interval)
+
+	err := newScheduler.StopTask(newTask)
+	expected := fmt.Sprintf("task with id: %s cannot be stopped, because it was not found", newTask.ID)
+
+	if err.Error() != expected {
+		t.Fatalf("Error has not been thrown for missing task with id %s.", newTask.ID)
 	}
 }
 

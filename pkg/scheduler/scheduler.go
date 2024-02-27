@@ -199,22 +199,26 @@ func (scheduler *Scheduler) ScheduleTask(name string, startTime *time.Time, dura
 }
 
 // StopTask encapsulates task stopping sequence.
-func (scheduler *Scheduler) StopTask(task *Task) {
+func (scheduler *Scheduler) StopTask(task *Task) error {
 	if task.stopSignal != nil {
 		close(task.stopSignal)
 		task.stopSignal = nil
 	}
-	scheduler.removeTask(task)
+	return scheduler.removeTask(task)
 }
 
 // removeTask removes Task from the tasks list of the Scheduler.
-func (scheduler *Scheduler) removeTask(scheduledTask *Task) {
+func (scheduler *Scheduler) removeTask(scheduledTask *Task) error {
 	taskIndex := scheduler.FindTaskIndex(scheduledTask)
+	if taskIndex == -1 {
+		return fmt.Errorf("task with id: %s cannot be stopped, because it was not found", scheduledTask.ID)
+	}
 	if len(scheduler.Tasks) <= 1 {
 		scheduler.Tasks = make([]*Task, 0)
 	} else {
 		scheduler.Tasks = append(scheduler.Tasks[:taskIndex], scheduler.Tasks[taskIndex+1:]...)
 	}
+	return nil
 }
 
 // callFunction calls a function dynamically using reflection.
