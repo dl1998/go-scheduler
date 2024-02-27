@@ -1,0 +1,42 @@
+@startuml
+top to bottom direction
+
+package pkg.scheduler {
+    class "<<module>>" {
+        + New() : *Scheduler
+        + NewTask(id : string, start : *time.Time, duration : *time.Duration, interval : time.Duration, stopSignal : chan bool, context : map[string]interface{}) : *Task
+        + NewSimpleTask(name : string, interval : time.Duration) : *Task
+        - callFunction(function : interface{}, parameters : ...interface{})
+    }
+
+    struct Scheduler {
+        + Tasks : []*Tasks
+        + FindTaskIndex(scheduledTask : *Task) : int
+        + FindTaskByName(name : string) : *Task
+        + FindTaskByID(id : string) : *Task
+        + ScheduleTask(name : string, startTime : *time.Time, duration : *time.Duration, interval : time.Duration, function : interface{}, parameters : ...interface{}) : *Task
+        + StopTask(task : *Task) : error
+        - removeTask(task : *Task) : error
+    }
+
+    struct Task {
+        + ID : string
+        + Name : string
+        + Start : *time.Time
+        + Duration : *time.Time
+        + Interval : time.Duration
+        - stopSignal : chan bool
+        - context : map[string]interface{}
+        + String() : string
+        + GetFromContext(name : string) : interface{}
+        + SetToContext(name : string, value : interface{})
+        + RemoveFromContext(name : string)
+        + Wait()
+    }
+}
+
+"pkg.scheduler.<<module>>" ..> pkg.scheduler.Scheduler : uses
+"pkg.scheduler.<<module>>" ..> pkg.scheduler.Task : uses
+pkg.scheduler.Scheduler *-- "0..*" pkg.scheduler.Task : contains
+
+@enduml
