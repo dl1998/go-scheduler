@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css"
+     height="808px" preserveAspectRatio="none" style="width:1298px;height:808px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 1298 808" width="1298px" zoomAndPan="magnify">
+    <defs/>
+    <g><!--cluster pkg-->
+        <g id="cluster_pkg">
+            <path d="M8.5,6 L36.5,6 A3.75,3.75 0 0 1 39,8.5 L46,28.4883 L1288.5,28.4883 A2.5,2.5 0 0 1 1291,30.9883 L1291,798.5 A2.5,2.5 0 0 1 1288.5,801 L8.5,801 A2.5,2.5 0 0 1 6,798.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 "
+                  fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="46" y1="28.4883" y2="28.4883"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="27" x="10" y="21.5352">pkg
+            </text>
+        </g><!--cluster scheduler-->
+        <g id="cluster_scheduler">
+            <path d="M32.5,49 L102.5,49 A3.75,3.75 0 0 1 105,51.5 L112,71.4883 L1264.5,71.4883 A2.5,2.5 0 0 1 1267,73.9883 L1267,774.5 A2.5,2.5 0 0 1 1264.5,777 L32.5,777 A2.5,2.5 0 0 1 30,774.5 L30,51.5 A2.5,2.5 0 0 1 32.5,49 "
+                  fill="none" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="30" x2="112" y1="71.4883" y2="71.4883"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+                  textLength="69" x="34" y="64.5352">scheduler
+            </text>
+        </g><!--class <<module>>-->
+        <g id="elem_&lt;&lt;module&gt;&gt;">
+            <rect codeLine="4" fill="#F1F1F1" height="113.9531" id="&lt;&lt;module&gt;&gt;" rx="2.5" ry="2.5"
+                  style="stroke:#181818;stroke-width:0.5;" width="1066" x="125" y="84"/>
+            <ellipse cx="620.75" cy="100" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M623.7231,105.6431 Q623.1421,105.9419 622.5029,106.0913 Q621.8638,106.2407 621.1582,106.2407 Q618.6514,106.2407 617.3315,104.5889 Q616.0117,102.937 616.0117,99.8159 Q616.0117,96.6865 617.3315,95.0347 Q618.6514,93.3828 621.1582,93.3828 Q621.8638,93.3828 622.5112,93.5322 Q623.1587,93.6816 623.7231,93.9805 L623.7231,96.7031 Q623.0923,96.1221 622.4988,95.8523 Q621.9053,95.5825 621.2744,95.5825 Q619.9297,95.5825 619.2449,96.6492 Q618.5601,97.7158 618.5601,99.8159 Q618.5601,101.9077 619.2449,102.9744 Q619.9297,104.041 621.2744,104.041 Q621.9053,104.041 622.4988,103.7712 Q623.0923,103.5015 623.7231,102.9204 Z "
+                  fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66"
+                  x="641.25" y="105.291">&#171;module&#187;
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="126" x2="1190" y1="116" y2="116"/>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="126" x2="1190" y1="124" y2="124"/>
+            <ellipse cx="136" cy="137.7441" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="145"
+                  y="141.5352">New() : *Scheduler
+            </text>
+            <ellipse cx="136" cy="154.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="1040"
+                  x="145" y="158.0234">NewTask(id : string, start : *time.Time, duration : *time.Duration, interval :
+                time.Duration, stopSignal : chan bool, context : map[string]interface{}) : *Task
+            </text>
+            <ellipse cx="136" cy="170.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="423" x="145"
+                  y="174.5117">NewSimpleTask(name : string, interval : time.Duration) : *Task
+            </text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="133" y="184.209"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="412" x="145"
+                  y="191">callFunction(function : interface{}, parameters : ...interface{})
+            </text>
+        </g><!--class Scheduler-->
+        <g id="elem_Scheduler">
+            <rect codeLine="11" fill="#F1F1F1" height="163.418" id="Scheduler" rx="2.5" ry="2.5"
+                  style="stroke:#181818;stroke-width:0.5;" width="1103" x="46.5" y="275"/>
+            <ellipse cx="559.75" cy="291" fill="#F1F1F1" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M559.2334,291.563 Q557.3823,290.8574 556.7266,290.0813 Q556.0708,289.3052 556.0708,287.9937 Q556.0708,286.3086 557.1499,285.3457 Q558.229,284.3828 560.1133,284.3828 Q560.9683,284.3828 561.8232,284.5779 Q562.6782,284.7729 563.5166,285.1548 L563.5166,287.5454 Q562.728,286.9893 561.9146,286.6987 Q561.1011,286.4082 560.3042,286.4082 Q559.416,286.4082 558.9429,286.7651 Q558.4697,287.1221 558.4697,287.7861 Q558.4697,288.3008 558.8142,288.637 Q559.1587,288.9731 560.2544,289.3799 L561.3086,289.7783 Q562.8027,290.3262 563.5083,291.231 Q564.2139,292.1357 564.2139,293.5137 Q564.2139,295.3896 563.1057,296.3152 Q561.9976,297.2407 559.7563,297.2407 Q558.835,297.2407 557.9094,297.0208 Q556.9839,296.8008 556.1206,296.3691 L556.1206,293.8374 Q557.1001,294.5347 558.0173,294.875 Q558.9346,295.2153 559.8311,295.2153 Q560.7358,295.2153 561.2339,294.8044 Q561.7319,294.3936 561.7319,293.6548 Q561.7319,293.0986 561.3999,292.6794 Q561.0679,292.2603 560.437,292.0195 Z "
+                  fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68"
+                  x="580.25" y="296.291">Scheduler
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="47.5" x2="1148.5" y1="307" y2="307"/>
+            <ellipse cx="57.5" cy="320.7441" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107"
+                  x="66.5" y="324.5352">Tasks : []*Tasks
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="47.5" x2="1148.5" y1="331.4883" y2="331.4883"/>
+            <ellipse cx="57.5" cy="345.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="294"
+                  x="66.5" y="349.0234">FindTaskIndex(scheduledTask : *Task) : int
+            </text>
+            <ellipse cx="57.5" cy="361.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="267"
+                  x="66.5" y="365.5117">FindTaskByName(name : string) : *Task
+            </text>
+            <ellipse cx="57.5" cy="378.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217"
+                  x="66.5" y="382">FindTaskByID(id : string) : *Task
+            </text>
+            <ellipse cx="57.5" cy="394.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="1077"
+                  x="66.5" y="398.4883">ScheduleTask(name : string, startTime : *time.Time, duration : *time.Duration,
+                interval : time.Duration, function : interface{}, parameters : ...interface{}) : *Task
+            </text>
+            <ellipse cx="57.5" cy="411.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199"
+                  x="66.5" y="414.9766">StopTask(task : *Task) : error
+            </text>
+            <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="54.5" y="424.6738"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219"
+                  x="66.5" y="431.4648">removeTask(task : *Task) : error
+            </text>
+        </g><!--class Task-->
+        <g id="elem_Task">
+            <rect codeLine="21" fill="#F1F1F1" height="245.8594" id="Task" rx="2.5" ry="2.5"
+                  style="stroke:#181818;stroke-width:0.5;" width="346" x="665" y="515"/>
+            <ellipse cx="817.75" cy="531" fill="#F1F1F1" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M817.2334,531.563 Q815.3823,530.8574 814.7266,530.0813 Q814.0708,529.3052 814.0708,527.9937 Q814.0708,526.3086 815.1499,525.3457 Q816.229,524.3828 818.1133,524.3828 Q818.9683,524.3828 819.8232,524.5779 Q820.6782,524.7729 821.5166,525.1548 L821.5166,527.5454 Q820.728,526.9893 819.9146,526.6987 Q819.1011,526.4082 818.3042,526.4082 Q817.416,526.4082 816.9429,526.7651 Q816.4697,527.1221 816.4697,527.7861 Q816.4697,528.3008 816.8142,528.637 Q817.1587,528.9731 818.2544,529.3799 L819.3086,529.7783 Q820.8027,530.3262 821.5083,531.231 Q822.2139,532.1357 822.2139,533.5137 Q822.2139,535.3896 821.1057,536.3152 Q819.9976,537.2407 817.7563,537.2407 Q816.835,537.2407 815.9094,537.0208 Q814.9839,536.8008 814.1206,536.3691 L814.1206,533.8374 Q815.1001,534.5347 816.0173,534.875 Q816.9346,535.2153 817.8311,535.2153 Q818.7358,535.2153 819.2339,534.8044 Q819.7319,534.3936 819.7319,533.6548 Q819.7319,533.0986 819.3999,532.6794 Q819.0679,532.2603 818.437,532.0195 Z "
+                  fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32"
+                  x="838.25" y="536.291">Task
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="666" x2="1010" y1="547" y2="547"/>
+            <ellipse cx="676" cy="560.7441" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="685"
+                  y="564.5352">ID : string
+            </text>
+            <ellipse cx="676" cy="577.2324" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="685"
+                  y="581.0234">Name : string
+            </text>
+            <ellipse cx="676" cy="593.7207" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="685"
+                  y="597.5117">Start : *time.Time
+            </text>
+            <ellipse cx="676" cy="610.209" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="685"
+                  y="614">Duration : *time.Time
+            </text>
+            <ellipse cx="676" cy="626.6973" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="685"
+                  y="630.4883">Interval : time.Duration
+            </text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="673" y="640.1855"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="685"
+                  y="646.9766">stopSignal : chan bool
+            </text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="673" y="656.6738"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="685"
+                  y="663.4648">context : map[string]interface{}
+            </text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="666" x2="1010" y1="670.418" y2="670.418"/>
+            <ellipse cx="676" cy="684.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="685"
+                  y="687.9531">String() : string
+            </text>
+            <ellipse cx="676" cy="700.6504" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="296" x="685"
+                  y="704.4414">GetFromContext(name : string) : interface{}
+            </text>
+            <ellipse cx="676" cy="717.1387" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="320" x="685"
+                  y="720.9297">SetToContext(name : string, value : interface{})
+            </text>
+            <ellipse cx="676" cy="733.627" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="685"
+                  y="737.418">RemoveFromContext(name : string)
+            </text>
+            <ellipse cx="676" cy="750.1152" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="685"
+                  y="753.9063">Wait()
+            </text>
+        </g><!--link <<module>> to Scheduler-->
+        <g id="link_&lt;&lt;module&gt;&gt;_Scheduler">
+            <path codeLine="37" d="M642.16,198.37 C635.6,221.72 629.484,243.474 622.334,268.904 " fill="none"
+                  id="&lt;&lt;module&gt;&gt;-to-Scheduler"
+                  style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#181818"
+                     points="620.71,274.68,626.9967,267.0986,622.0633,269.8666,619.2953,264.9333,620.71,274.68"
+                     style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="634"
+                  y="241.5684">uses
+            </text>
+        </g><!--link <<module>> to Task-->
+        <g id="link_&lt;&lt;module&gt;&gt;_Task">
+            <path codeLine="38"
+                  d="M999.51,198.42 C1076.53,218.27 1142.79,243.65 1167,275 C1211.28,332.34 1202.58,374.9 1167,438 C1132.74,498.76 1076.9606,540.3259 1016.6306,571.4959 "
+                  fill="none" id="&lt;&lt;module&gt;&gt;-to-Task"
+                  style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="#181818"
+                     points="1011.3,574.25,1021.1319,573.6726,1015.7421,571.9549,1017.4598,566.5652,1011.3,574.25"
+                     style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="1198"
+                  y="361.5684">uses
+            </text>
+        </g><!--reverse link Scheduler to Task-->
+        <g id="link_Scheduler_Task">
+            <path codeLine="39" d="M675.238,447.4438 C695.728,471.3038 710.8,488.87 733.01,514.72 " fill="none"
+                  id="Scheduler-backto-Task" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="#181818"
+                     points="667.42,438.34,668.2944,445.4979,675.238,447.4438,674.3636,440.2859,667.42,438.34"
+                     style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="704"
+                  y="481.5684">contains
+            </text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22"
+                  x="703.9419" y="504.3327">0..*
+            </text>
+        </g><!--SRC=[hLGzJyCm4DtpAqwPqf9QpAZg05LH5mPQYG5rCCvHh2PsP3jy2F7ViTscjTD424I69Bftx-xvFcna3KR2apH6Lb1mXSnmAPAafcn7jmZrRaiqUy6YAL71PmBsOINL6jBfj9BEF9kb1y0z5t27Rza8hc2yQdankAPwb_72UcYZkDZczakLSGp3AoHh-ygXQ1HrKexc-S6G0nS6rIijBTH1j97rYc-5nzWB5VPaiio1IKjvToagMZ_kqsvyc6VAyFFBotMwOgKhNjKbUhs2LXWe7f9m7cW2Z9RbeX6-iDdpuSVw1VbpgAco6Qn1MuGG4ehpiRuI_x426cPWrMd9Nh9BxFYF6wz11z22YyBPbgB0zwpjg3UraaTxJJsawuyxAowkGL_9JlxBUTZXFj_s17tLzVFWnk0_Pk8l5U_JQqVBQpMTag5IKWNjLbZ9L_p1DUwcxqBOoENyM8rm8iCgHTAwwnE0ysxDElXoe731YVgtAfpm7zOhqkf0Vp-SdUCMpKB9wcOVxNpS1YAYMSjUJWxsN0t6p550lVUj6iuPk3vGRh9s4sttqkXY9E5TICWilZR9QLkleD6eVyS-xAWd3iKTJoQGNX8oJll9haEK2vry0m00]-->
+    </g>
+</svg>
