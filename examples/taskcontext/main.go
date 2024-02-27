@@ -17,7 +17,7 @@ func DemoFunction(task *scheduler.Task) {
 	task.SetToContext(contextCounterName, counter+1)
 }
 
-func ScheduleDemoTask(scheduler scheduler.Scheduler) *scheduler.Task {
+func ScheduleDemoTask(scheduler *scheduler.Scheduler) *scheduler.Task {
 	name := "Demo Task"
 	duration := 10 * time.Second
 	interval := time.Second
@@ -28,7 +28,7 @@ func ScheduleDemoTask(scheduler scheduler.Scheduler) *scheduler.Task {
 func main() {
 	newScheduler := scheduler.New()
 
-	task := ScheduleDemoTask(*newScheduler)
+	task := ScheduleDemoTask(newScheduler)
 
 	task.Wait()
 
