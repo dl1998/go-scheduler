@@ -1,4 +1,4 @@
-// Example that shows how to schedule simple task.
+// Example that shows how to use Task context.
 package main
 
 import (
@@ -8,7 +8,13 @@ import (
 )
 
 func DemoFunction(task *scheduler.Task) {
-	fmt.Println("Hello, World!")
+	contextCounterName := "counter"
+	if task.GetFromContext(contextCounterName) == nil {
+		task.SetToContext(contextCounterName, 0)
+	}
+	counter := task.GetFromContext(contextCounterName).(int)
+	fmt.Printf("[%d] Hello, World!\n", counter)
+	task.SetToContext(contextCounterName, counter+1)
 }
 
 func ScheduleDemoTask(scheduler *scheduler.Scheduler) *scheduler.Task {

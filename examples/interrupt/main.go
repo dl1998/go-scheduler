@@ -1,4 +1,4 @@
-// Example that shows how to schedule simple task.
+// Example that shows how to interrupt task that is currently scheduled.
 package main
 
 import (
@@ -8,7 +8,13 @@ import (
 )
 
 func DemoFunction(task *scheduler.Task) {
-	fmt.Println("Hello, World!")
+	contextCounterName := "counter"
+	if task.GetFromContext(contextCounterName) == nil {
+		task.SetToContext(contextCounterName, 0)
+	}
+	counter := task.GetFromContext(contextCounterName).(int)
+	fmt.Println(counter)
+	task.SetToContext(contextCounterName, counter+1)
 }
 
 func ScheduleDemoTask(scheduler *scheduler.Scheduler) *scheduler.Task {
@@ -24,7 +30,11 @@ func main() {
 
 	task := ScheduleDemoTask(newScheduler)
 
-	task.Wait()
+	time.Sleep(5 * time.Second)
+
+	if err := newScheduler.StopTask(task); err != nil {
+		panic(err)
+	}
 
 	fmt.Println()
 	fmt.Println(task)
